@@ -9,12 +9,12 @@
 
 version="1.0"
 title = '''
-########################       SIMUMATING DoS ATTACK        ########################
+#########################       SIMUMATING DoS ATTACK        #########################
                                                                   
                                @Author: Vikas Kumar
 https://github.com/vikas-singh-cse/dos-attack/blob/master/launch-dos-attack.py 
 		               Version: '''+version+'''
-#################################################################################### 
+###################################################################################### 
 '''
 
 import os
